@@ -10,7 +10,6 @@ import java.util.*;
 
 public class SistemaBiblioteca implements Prestable, Reservable {
 
-  // ESTRUCTURAS EXACTAS del enunciado
   private Map<String, Libro> catalogoLibros = new HashMap<>();
   private Map<String, Queue<Usuario>> listaEsperaLibros = new HashMap<>();
   private Map<Categoria, Set<Libro>> librosPorCategoria = new HashMap<>();
@@ -39,7 +38,6 @@ public class SistemaBiblioteca implements Prestable, Reservable {
 
   @Override
   public void prestarLibro(Libro libro, Usuario usuario) throws LibroNoDisponibleException {
-    // ✅ VALIDACIÓN de usuario registrado (requerimiento)
     if (!usuariosRegistrados.contains(usuario)) {
       throw new LibroNoDisponibleException("Usuario no registrado: " + usuario.getNombre());
     }
@@ -57,7 +55,6 @@ public class SistemaBiblioteca implements Prestable, Reservable {
 
   @Override
   public void devolverLibro(Libro libro, Usuario usuario) {
-    // ✅ BUSCAR préstamo activo y marcar fecha devolución
     Optional<Prestamo> prestamoActivo = historialPrestamos.get(usuario).stream()
         .filter(p -> p.getLibro().equals(libro) && p.estaActivo())
         .findFirst();
