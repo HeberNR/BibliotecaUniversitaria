@@ -30,7 +30,7 @@ public class Main {
     biblioteca.agregarLibro(libro2);
     biblioteca.agregarLibro(libro3);
 
-    System.out.println("✅ Libros en catálogo: " + biblioteca.getCatalogoLibros().size()); // ✅ CAMBIADO
+    System.out.println("✅ Libros en catálogo: " + biblioteca.getCatalogoLibros().size());
 
     // 3. Préstamo de libro (éxito)
     try {
@@ -66,22 +66,22 @@ public class Main {
 
     // 7. Mostrar cola de espera
     System.out.println("👥 Cola de espera para '" + libro1.getTitulo() + "': " +
-        biblioteca.getListaEsperaLibros().get(libro1.getIsbn()).size() + " personas"); // ✅ CAMBIADO
+        biblioteca.getListaEsperaLibros().get(libro1.getIsbn()).size() + " personas");
 
     // 8. Devolver libro
     biblioteca.devolverLibro(libro1, usuario1);
     System.out.println("✅ " + usuario1.getNombre() + " devolvió: " + libro1.getTitulo());
 
     // 9. Ver siguiente en cola
-    Usuario siguiente = biblioteca.obtenerSiguienteEnCola(libro1); // ✅ CAMBIADO
+    Usuario siguiente = biblioteca.obtenerSiguienteEnCola(libro1);
     if (siguiente != null) {
       System.out.println("👉 Siguiente en cola: " + siguiente.getNombre());
     }
 
     // 10. Mostrar estadísticas finales
     System.out.println("\n=== ESTADÍSTICAS FINALES ===");
-    System.out.println("📚 Total libros: " + biblioteca.getCatalogoLibros().size()); // ✅ CAMBIADO
+    System.out.println("📚 Total libros: " + biblioteca.getCatalogoLibros().size());
     System.out.println("👥 Total usuarios: " + biblioteca.getUsuariosRegistrados().size());
-    System.out.println("⏳ Reservas activas: " + biblioteca.getListaEsperaLibros().size()); // ✅ CAMBIADO
+    System.out.println("⏳ Reservas activas: " + biblioteca.getListaEsperaLibros().size());
   }
 }

@@ -6,13 +6,13 @@ public class Prestamo {
   private Libro libro;
   private Usuario usuario;
   private Date fechaPrestamo;
-  private Date fechaDevolucion; // ✅ NUEVO campo requerido
+  private Date fechaDevolucion;
 
   public Prestamo(Libro libro, Usuario usuario) {
     this.libro = libro;
     this.usuario = usuario;
     this.fechaPrestamo = new Date();
-    this.fechaDevolucion = null; // Inicialmente null
+    this.fechaDevolucion = null;
   }
 
   // Getters
@@ -30,14 +30,14 @@ public class Prestamo {
 
   public Date getFechaDevolucion() {
     return fechaDevolucion;
-  } // ✅ NUEVO getter
+  }
 
-  // ✅ NUEVO setter para fecha de devolución
+
   public void setFechaDevolucion(Date fechaDevolucion) {
     this.fechaDevolucion = fechaDevolucion;
   }
 
-  // ✅ MÉTODO para marcar como devuelto
+
   public void devolver() {
     this.fechaDevolucion = new Date();
   }
