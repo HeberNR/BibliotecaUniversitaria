@@ -15,7 +15,7 @@ public class Usuario {
     this.historialPrestamos = new ArrayList<>();
   }
 
-  // Getters
+
   public String getId() {
     return id;
   }
@@ -26,6 +26,11 @@ public class Usuario {
 
   public List<Prestamo> getHistorialPrestamos() {
     return historialPrestamos;
+  }
+
+
+  public void agregarPrestamo(Prestamo prestamo) {
+    historialPrestamos.add(prestamo);
   }
 
   @Override
@@ -39,5 +44,10 @@ public class Usuario {
   @Override
   public int hashCode() {
     return Objects.hash(id);
+  }
+
+  @Override
+  public String toString() {
+    return "Usuario{" + "id='" + id + '\'' + ", nombre='" + nombre + '\'' + '}';
   }
 }
